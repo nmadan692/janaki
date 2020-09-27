@@ -39,13 +39,11 @@
                         <div class="single-blog-widget mb-50">
                             <h3>categories</h3>
                             <ul>
-                                <li><a href="#">Engineering </a></li>
-                                <li><a href="#">Science</a></li>
-                                <li><a href="#">Micro Biology</a></li>
-                                <li><a href="#">HTML5 &amp; CSS3 (15)</a></li>
-                                <li><a href="#">Web Design (20)</a></li>
-                                <li><a href="#">PHP</a></li>
+                                @foreach($blogCategory  as $blogCategory)
+                                    <li><a href="{{ route('blog', ['id' => encrypt($blogCategory->id)]) }}">{{ $blogCategory->name }}</a></li>
+                                @endforeach
                             </ul>
+
                         </div>
                         <div class="single-blog-widget mb-50">
                             <div class="single-blog-banner">
@@ -54,46 +52,25 @@
                             </div>
                         </div>
                         <div class="single-blog-widget mb-50">
+
                             <h3>latest post</h3>
+
+                            @foreach($recentBlog as $recentBlog)
                             <div class="single-post mb-30">
                                 <div class="single-post-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/post/post1.jpg" alt="post">
+                                    <a href="{{ route('blog.details', encrypt($recentBlog->id))  }}"><img src="{{ getImageUrl($recentBlog->image) }}" width="95px" height="84px" alt="post">
                                         <div class="blog-hover">
                                             <i class="fa fa-link"></i>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="single-post-content">
-                                    <h4><a href="#">English Language Course for you</a></h4>
-                                    <p>By Alex  /  June 20, 2017</p>
+                                    <h4><a href="{{ route('blog.details', encrypt($recentBlog->id))}}">{{$recentBlog->name}}</a></h4>
+                                    <p>By Admin  /  {{ $recentBlog->posted_date }}</p>
                                 </div>
                             </div>
-                            <div class="single-post mb-30">
-                                <div class="single-post-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/post/post2.jpg" alt="post">
-                                        <div class="blog-hover">
-                                            <i class="fa fa-link"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="single-post-content">
-                                    <h4><a href="#">Advance Web Design and Develop</a></h4>
-                                    <p>By Alex  /  June 20, 2017</p>
-                                </div>
-                            </div>
-                            <div class="single-post">
-                                <div class="single-post-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/post/post3.jpg" alt="post">
-                                        <div class="blog-hover">
-                                            <i class="fa fa-link"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="single-post-content">
-                                    <h4><a href="#">English Language Course for you</a></h4>
-                                    <p>By Alex  /  June 20, 2017</p>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
 {{--                        <div class="single-blog-widget">--}}
 {{--                            <h3>tags</h3>--}}
@@ -110,120 +87,45 @@
                 </div>
                 <div class="col-md-8">
                     <div class="row">
+
+                        @forelse($blog as $blog)
+
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="single-blog mb-60">
                                 <div class="blog-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/blog/blog.jpg" alt="blog"></a>
+                                    <a href="{{ route('blog.details', encrypt($blog->id) )  }}"><img src="{{ getImageUrl($blog->image) }}" alt="blog"></a>
                                     <div class="blog-hover">
                                         <i class="fa fa-link"></i>
                                     </div>
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-top">
-                                        <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
+                                        <p>By Admin  /  {{ $blog->created_at }} </p>
                                     </div>
                                     <div class="blog-bottom">
-                                        <h2><a href="#">I must explain to you how all this a mistaken idea </a></h2>
-                                        <a href="#">read more</a>
+                                        <h2><a href="{{ route('blog.details', encrypt($blog->id) )  }}">{{$blog->name}}</a></h2>
+                                        <p>{!! strip_tags(Str::limit($blog->description,100)) !!}</p>
+
+                                        <a href="{{ route('blog.details', encrypt($blog->id) )  }}">read more</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-blog mb-60">
-                                <div class="blog-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/blog/blog.jpg" alt="blog"></a>
-                                    <div class="blog-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-top">
-                                        <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                    </div>
-                                    <div class="blog-bottom">
-                                        <h2><a href="#">I must explain to you how all this a mistaken idea </a></h2>
-                                        <a href="#">read more</a>
-                                    </div>
+
+
+                        @empty
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="blog__item">
+
+                                    <p>No recent blogs are available.</p>
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-blog mb-60">
-                                <div class="blog-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/blog/blog.jpg" alt="blog"></a>
-                                    <div class="blog-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-top">
-                                        <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                    </div>
-                                    <div class="blog-bottom">
-                                        <h2><a href="{{asset('front')}}/blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                                        <a href="#">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-blog mb-60">
-                                <div class="blog-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/blog/blog.jpg" alt="blog"></a>
-                                    <div class="blog-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-top">
-                                        <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                    </div>
-                                    <div class="blog-bottom">
-                                        <h2><a href="#">I must explain to you how all this a mistaken idea </a></h2>
-                                        <a href="#">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-blog">
-                                <div class="blog-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/blog/blog.jpg" alt="blog"></a>
-                                    <div class="blog-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-top">
-                                        <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                    </div>
-                                    <div class="blog-bottom">
-                                        <h2><a href="#">I must explain to you how all this a mistaken idea </a></h2>
-                                        <a href="#">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-blog">
-                                <div class="blog-img">
-                                    <a href="#"><img src="{{asset('front')}}/img/blog/blog.jpg" alt="blog"></a>
-                                    <div class="blog-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-top">
-                                        <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                    </div>
-                                    <div class="blog-bottom">
-                                        <h2><a href="#">I must explain to you how all this a mistaken idea </a></h2>
-                                        <a href="#">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        @endforelse
+
+
+
                         <div class="col-md-12">
                             <div class="pagination">
                                 <ul>

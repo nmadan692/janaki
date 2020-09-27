@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <div class="header-top-left">
-                        <p>HAVE ANY QUESTION ?  +977 9851146341</p>
+                        <p>HAVE ANY QUESTION ?  {{ $setting[0]->phone ?? null}}</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <div class="logo">
-                        <a href="index.html"><img src="{{asset('front')}}/img/logo/logo2.png" alt="eduhome" /></a>
+                        <a href="index.html"><img src="{{ getImageUrl( $setting[0]->logo ?? null) }}" alt="eduhome" /></a>
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-6">
@@ -41,14 +41,14 @@
 {{--                                            <li><a href="course-details.html">course 2</a></li>--}}
 {{--                                        </ul>--}}
                                     </li>
-                                    <li><a href="{{ route('event') }}">event</a>
+                                    <li><a href="#">Downloads</a>
 
                                     </li>
 
                                     <li><a href="{{ route('blog') }}">blog</a>
 
                                     </li>
-                                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                                    <li><a href="{{ route('contact.index') }}">Contact</a></li>
 
                                 </ul>
                             </nav>
