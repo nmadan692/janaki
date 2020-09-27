@@ -4,15 +4,14 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="single-widget pr-60">
                     <div class="footer-logo pb-25">
-                        <a href="index.html"><img src="{{asset('front')}}/img/logo/footer-logo.png" alt="eduhome"></a>
+                        <a href="index.html"><img src="{{ getImageUrl( $setting[0]->logo ?? null) }}" alt="janaki education hub"></a>
                     </div>
-                    <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and give you a coete account of the system. </p>
+<p>We are dedicated to provide best solutions to the students seeking for Language classes, Computer Classes, Tuition Classes and many more.</p>
                     <div class="footer-social">
                         <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
+                            <li><a href="{{ $setting[0]->facebook ?? null}}"><i class="zmdi zmdi-facebook"></i></a></li>
+                            <li><a href="{{ $setting[0]->instagram ?? null}}"><i class="zmdi zmdi-instagram"></i></a></li>
+                            <li><a href="{{ $setting[0]->twitter ?? null}}"><i class="zmdi zmdi-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -21,10 +20,10 @@
                 <div class="single-widget">
                     <h3>information</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Course</a></li>
-                        <li><a href="#">Event List</a></li>
-                        <li><a href="#">Teachers</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('courses') }}">Course</a></li>
+                        <li><a href="{{ route('contact.index') }}">Contact</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -32,11 +31,11 @@
                 <div class="single-widget">
                     <h3>useful links</h3>
                     <ul>
-                        <li><a href="#">our top courses</a></li>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">teachers &amp; faculty</a></li>
+
+                        <li><a href="{{ route('about') }}">about us</a></li>
+
                         <li><a href="#">teams &amp; conditions</a></li>
-                        <li><a href="#">our events</a></li>
+                        <li><a href="#">privacy policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,8 +43,8 @@
                 <div class="single-widget">
                     <h3>get in touch</h3>
                     <p>Our address goes here, Street<br>Tikathali, Lalitpur Nepal</p>
-                    <p>+977 9851146341<br>+977 9823352737</p>
-                    <p>janakieducationhub@gmail.com<br>www.janakieducationhub.com</p>
+                    <p>{{ $setting[0]->phone ?? null}}</p>
+                    <p>{{ $setting[0]->email ?? null}}</p>
                 </div>
             </div>
         </div>

@@ -20,23 +20,26 @@
     </div>
     <!-- Banner Area End -->
     <!-- About Start -->
-    <div class="about-area pt-145 pb-155">
+    <div class="about-area pt-100 pb-155">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="about-content">
-                        <h2>WELCOME TO <span>Janaki Education</span></h2>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system, and expound the actual teachings  the master-builder of humanit happiness</p>
-                        <p class="hidden-sm">I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system</p>
-                        <a class="default-btn" href="#">know more</a>
+                <div class="row">
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <div class="teacher-details-img">
+                            <img src="{{ getImageUrl($message[0]->image) }}" alt="teacher">
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="teacher-details-content ml-50">
+                            <h2 class="pb-20">Message From MD</h2>
+                            <p>{!! $message[0]->message_from_md !!}</p>
+                            <ul>
+                                <li><span>Bikash Kumar Jha</span></li>
+                                <li><span></span>Managing Director</li>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="about-img">
-                        <img src="{{asset('front')}}/img/about/about.jpg" alt="about">
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- About End -->
@@ -52,74 +55,36 @@
                 </div>
             </div>
             <div class="row">
+
+                @forelse($teachers as $teacher)
                 <div class="col-md-3 col-sm-4 col-xs-12">
                     <div class="single-teacher">
                         <div class="single-teacher-img">
-                            <a href="#"><img src="{{asset('front')}}/img/teacher/teacher1.jpg" alt="teacher"></a>
+                            <a href="#"><img src="{{ getImageUrl($teacher->image) }}" alt="teacher"></a>
                         </div>
                         <div class="single-teacher-content text-center">
-                            <h2><a href="#">Bikash kumar jha</a></h2>
-                            <h4>computer science</h4>
+                            <h2><a href="#">{{ $teacher->name }}</a></h2>
+                            <h4>{{ $teacher->subject }}</h4>
                             <ul>
-                                <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="{{ $teacher->facebook }}"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="{{ $teacher->twitter }}"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="{{ $teacher->linkedin }}"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                <li><a href="{{ $teacher->instagram }}"><i class="zmdi zmdi-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-4 col-xs-12">
-                    <div class="single-teacher">
-                        <div class="single-teacher-img">
-                            <a href="teacher-details.html"><img src="{{asset('front')}}/img/teacher/teacher2.jpg" alt="teacher"></a>
-                        </div>
-                        <div class="single-teacher-content text-center">
-                            <h2><a href="#">Viswanath karn</a></h2>
-                            <h4>Account</h4>
-                            <ul>
-                                <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                            </ul>
+                @empty
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item">
+
+                            <p>No recent teachers are available.</p>
+
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-12">
-                    <div class="single-teacher">
-                        <div class="single-teacher-img">
-                            <a href="#"><img src="{{asset('front')}}/img/teacher/teacher3.jpg" alt="teacher"></a>
-                        </div>
-                        <div class="single-teacher-content text-center">
-                            <h2><a href="#">Rajaram Mishra</a></h2>
-                            <h4>Mathematics</h4>
-                            <ul>
-                                <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 hidden-sm col-xs-12">
-                    <div class="single-teacher">
-                        <div class="single-teacher-img">
-                            <a href="#"><img src="{{asset('front')}}/img/teacher/teacher4.jpg" alt="teacher"></a>
-                        </div>
-                        <div class="single-teacher-content text-center">
-                            <h2><a href="#">Rajaram Mishra</a></h2>
-                            <h4>Mathematics</h4>
-                            <ul>
-                                <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+                @endforelse
+
             </div>
         </div>
     </div>
@@ -132,12 +97,12 @@
                     <div class="col-md-8 col-md-offset-2 col-sm-12">
                         <div class="single-testimonial">
                             <div class="testimonial-info">
-                                <div class="testimonial-img">
-                                    <img src="{{asset('front')}}/img/testimonial/testimonial.jpg" alt="testimonial">
-                                </div>
+{{--                                <div class="testimonial-img">--}}
+{{--                                    <img src="{{asset('front')}}/img/testimonial/testimonial.jpg" alt="testimonial">--}}
+{{--                                </div>--}}
                                 <div class="testimonial-content">
                                     <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                    <h4>David Morgan</h4>
+                                    <h4>Madan Neupane</h4>
                                     <h5>Student, CSE</h5>
                                 </div>
                             </div>

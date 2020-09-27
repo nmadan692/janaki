@@ -72,26 +72,67 @@
                     <div class="reply-area">
                         <h3>LEAVE A message</h3>
                         <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
-                        <form id="contact-form" action="mail.php" method="post">
-                            <div class="row">
-                                <div class="col-md-12">
+
+                        <form action="{{ route('contact.store') }}" method="post">
+                            @csrf
+                            <div class="row contact-custom">
+                                <div class="col-lg-12">
                                     <p>Name</p>
-                                    <input type="text" name="name" id="name">
+                                    <input type="text" name="name" id="name"  class="{{ $errors->first('name') ? 'has-error' : ''}}">
+                                    @if($errors->first('name'))
+                                        <span class="error">{{ $errors->first('name') }}</span>
+                                    @endif
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-lg-12">
                                     <p>Email</p>
-                                    <input type="text" name="email" id="email">
-                                </div>
-                                <div class="col-md-12">
-                                    <p>Subject</p>
-                                    <input type="text" name="subject" id="subject">
-                                    <p>Massage</p>
-                                    <textarea name="message" id="message" cols="15" rows="10"></textarea>
+                                    <input type="text" name="email" id="email" class="{{ $errors->first('email') ? 'has-error' : ''}}">
+                                    @if($errors->first('email'))
+                                        <span class="error">{{ $errors->first('email') }}</span>
+                                    @endif
                                 </div>
                             </div>
-                            <a class="reply-btn" href="#" data-text="send"><span>send message</span></a>
-                            <p class="form-messege"></p>
+
+                            <div class="row contact-custom">
+                                <div class="col-lg-12">
+                                    <p>Message</p>
+                                    <textarea id="message" cols="15" rows="10" name="message" class="{{ $errors->first('message') ? 'has-error' : ''}}"></textarea>
+                                    @if($errors->first('message'))
+                                        <span class="error">{{ $errors->first('message') }}</span>
+                                    @endif
+                                    <button type="submit" class="site-btn">SEND MESSAGE</button>
+                                </div>
+                            </div>
                         </form>
+
+{{--                        <form id="contact-form" action="{{ route('contact.store') }}" method="post">--}}
+{{--                            @csrf--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-12">--}}
+{{--                                    <p>Name</p>--}}
+{{--                                    <input id="name" type="text" name="name"  class="{{ $errors->first('name') ? 'has-error' : ''}}">--}}
+{{--                                    @if($errors->first('name'))--}}
+{{--                                        <span class="error">{{ $errors->first('name') }}</span>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-12">--}}
+{{--                                    <p>Email</p>--}}
+{{--                                    <input id="email" type="text" name="email" class="{{ $errors->first('email') ? 'has-error' : ''}}">--}}
+{{--                                    @if($errors->first('email'))--}}
+{{--                                        <span class="error">{{ $errors->first('email') }}</span>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-12">--}}
+
+{{--                                    <p>Massage</p>--}}
+{{--                                    <textarea id="message" cols="15" rows="10" name="message" class="{{ $errors->first('message') ? 'has-error' : ''}}"></textarea>--}}
+{{--                                    @if($errors->first('message'))--}}
+{{--                                        <span class="error">{{ $errors->first('message') }}</span>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            --}}
+{{--                            <a class="reply-btn"  type="submit"  href="{{ route('contact.store') }}" data-text="send"><span>send message</span></a>--}}
+{{--                        </form>--}}
                     </div>
                 </div>
             </div>

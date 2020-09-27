@@ -37,150 +37,36 @@
                 </div>
             </div>
             <div class="row">
+
+                @forelse($courses as $course)
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-course mb-70">
                         <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
+                            <a href="{{ route('courses.details', encrypt($course->id) )  }}"><img src="{{ getImageUrl($course->image) }}" alt="course">
                                 <div class="course-hover">
                                     <i class="fa fa-link"></i>
                                 </div>
                             </a>
                         </div>
                         <div class="course-content">
-                            <h3><a href="#">CSE ENGINEERING</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="#">read more</a>
+                            <h3><a href="{{ route('courses.details', encrypt($course->id) )  }}">{{ $course->name }}</a></h3>
+                            <p>{!! strip_tags(Str::limit($course->description,100)) !!}</p>
+                            <a class="default-btn" href="{{ route('courses.details', encrypt($course->id) )  }}">read more</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course mb-70">
-                        <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="#">political science</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="course-details.html">read more</a>
+
+                @empty
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item">
+
+                            <p>No recent courses are available.</p>
+
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course mb-70">
-                        <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="#">micro biology</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course mb-70">
-                        <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="#">English history</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course mb-70">
-                        <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="#">digital marketing</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course mb-70">
-                        <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="#">html5 &amp; css3</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course">
-                        <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="#">learn php5</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course">
-                        <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="#">social science</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 hidden-sm col-xs-12">
-                    <div class="single-course">
-                        <div class="course-img">
-                            <a href="#"><img src="{{asset('front')}}/img/course/course.jpg" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="#">applied mathematics</a></h3>
-                            <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                            <a class="default-btn" href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
+
+                @endforelse
+
             </div>
         </div>
     </div>
