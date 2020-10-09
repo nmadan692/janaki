@@ -31,9 +31,30 @@
                             </div>
 
                             <div class="form-group m-form__group row">
-                                <label for="example-text-input" class="col-2 col-form-label">Message From MD</label>
+                                <label for="example-text-input" class="col-2 col-form-label">Confidence</label>
                                 <div class="col-4">
-                                    <p>{!! strip_tags($about->message_from_md) !!}</p>
+                                    <p>{!! strip_tags($about->confidence) !!}</p>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-form__group row">
+                                <label for="example-text-input" class="col-2 col-form-label">Community</label>
+                                <div class="col-4">
+                                    <p>{!! strip_tags($about->community) !!}</p>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-form__group row">
+                                <label for="example-text-input" class="col-2 col-form-label">Programs</label>
+                                <div class="col-4">
+                                    <p>{!! strip_tags($about->programs) !!}</p>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-form__group row">
+                                <label for="example-text-input" class="col-2 col-form-label">Success</label>
+                                <div class="col-4">
+                                    <p>{!! strip_tags($about->success) !!}</p>
                                 </div>
                             </div>
 

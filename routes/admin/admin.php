@@ -48,3 +48,16 @@ Route::resource('banner', 'Banner\BannerController');
 // Message
 Route::get('message/list', 'Message\MessageController@list')->name('message.list');
 Route::resource('message', 'Message\MessageController');
+
+// Abroad
+Route::get('abroad/list', 'Abroad\AbroadController@list')->name('message.list');
+Route::resource('abroad', 'Abroad\AbroadController');
+
+// Download
+Route::get('download/list', 'Download\DownloadController@list')->name('download.list');
+Route::get('download/status/change/{id}', 'Download\DownloadController@changeStatus')->name('download.status.change');
+Route::resource('download', 'Download\DownloadController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

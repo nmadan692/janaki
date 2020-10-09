@@ -16,6 +16,10 @@ class CreateAboutsTable extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('about_us',10000);
+            $table->string('confidence',1000);
+            $table->string('community',1000);
+            $table->string('programs',1000);
+            $table->string('success',1000);
 
 
             $table->string('image')->nullable();

@@ -64,7 +64,10 @@ class AboutController extends Controller
                 'id',
                 'image',
                 'about_us',
-                'message_from_md'
+                'confidence',
+                'community',
+                'programs',
+                'success'
             ],
             null,
             [],
@@ -75,9 +78,7 @@ class AboutController extends Controller
             return  strip_tags(Str::limit($data->about_us,100));
         });
 
-        $query->editColumn('message_from_md', function ($data) {
-            return  strip_tags(Str::limit($data->message_from_md,100));
-        });
+
         $query->addColumn('action', function ($data) use($actionData) {
             $id = $data->id;
             return view('general.datatable.action', compact('actionData', 'id'));
@@ -85,7 +86,7 @@ class AboutController extends Controller
         $query->addIndexColumn();
 
 
-        $query->rawColumns(['about_us', 'message_from_md', 'action']);
+        $query->rawColumns(['about_us', 'action']);
 
         return $query->make();
     }

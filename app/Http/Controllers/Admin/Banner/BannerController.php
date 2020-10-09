@@ -64,6 +64,8 @@ class BannerController extends Controller
             [
                 'id',
                 'image',
+                'tittle',
+                'sub_tittle',
                 'status'
             ],
             null,

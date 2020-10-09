@@ -41,7 +41,9 @@
 {{--                                            <li><a href="course-details.html">course 2</a></li>--}}
 {{--                                        </ul>--}}
                                     </li>
-                                    <li><a href="#">Downloads</a>
+                                    <li><a href="{{ route('abroad') }}">Abroad Study</a>
+
+                                    <li><a href="{{ route('download') }}">Downloads</a>
 
                                     </li>
 

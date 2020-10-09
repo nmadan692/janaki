@@ -149,6 +149,28 @@ class MenuTableSeeder extends Seeder
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
             ],
+            [
+                'name' => 'Abroad',
+                'slug' => 'abroad',
+                'order' => 12,
+                'status' => true,
+                'route' => 'admin.abroad.index',
+                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'parent_id' => null,
+                'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
+                'related_route' => null
+            ],
+            [
+                'name' => 'Download',
+                'slug' => 'download',
+                'order' => 13,
+                'status' => true,
+                'route' => 'admin.download.index',
+                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'parent_id' => null,
+                'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
+                'related_route' => null
+            ],
         ];
 
         $this->menuService->truncate();

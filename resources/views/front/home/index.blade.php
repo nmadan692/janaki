@@ -15,9 +15,9 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="slide-content-wrapper">
                                 <div class="slide-content text-center">
-                                    <h2>EDUCATION MAKES HUMANITY </h2>
-                                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and prsing pain was born and I will give you a complete account of the system  </p>
-                                    <a class="default-btn" href="#">Learn more</a>
+                                    <h2>{{ $banner->tittle }}</h2>
+                                    <p>{{ $banner->sub_tittle }} </p>
+                                    <a class="default-btn" href="{{ route('contact.index') }}">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -128,21 +128,32 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="notice-right-wrapper mb-25 pb-25">
-                    <h3>TAKE A VIDEO TOUR</h3>
-                    <div class="notice-video">
-                        <div class="video-icon video-hover">
-                            <a class="video-popup" href="https://youtu.be/QoRP4NYozzo">
-                                <i class="zmdi zmdi-play"></i>
-                            </a>
-                        </div>
+                <div class="notice-right">
+                    <div class="single-notice-right mb-25 pb-25">
+                        <h3>Confidence</h3>
+                        <p>{!! $about[0]->confidence ?? null !!}</p>
+                    </div>
+                    <div class="single-notice-right mb-25 pb-25">
+                        <h3>Community</h3>
+                        <p>{!! $about[0]->community ?? null !!}</p>
+
+                    </div>
+                    <div class="single-notice-right mb-25 pb-25">
+                        <h3>Programs</h3>
+                        <p>{!! $about[0]->programs ?? null !!}</p>
+
+                    </div>
+                    <div class="single-notice-right">
+                        <h3>Success</h3>
+                        <p>{!! $about[0]->success ?? null !!}</p>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="notice-left-wrapper">
-                    <h3>notice board</h3>
                     <div class="notice-left">
+                        <h3>notice board</h3>
 
                         @forelse($notices as $notice)
 

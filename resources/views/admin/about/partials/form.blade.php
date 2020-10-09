@@ -11,10 +11,23 @@
 
         </div>
             <div class="form-group m-form__group row">
-                <x-inputs.ckeditor form-class="col-lg-12" label="Message From MD" labelfor="message_from_md" name="message_from_md" input-id="message_from_md" value="{!! $data['about'] ? $data['about']->message_from_md:  old('message_from_md') ? old('message_from_md') : null !!}"></x-inputs.ckeditor>
+                <x-inputs.ckeditor form-class="col-lg-12" label="Confidence" labelfor="confidence" name="confidence" input-id="confidence" value="{!! $data['about'] ? $data['about']->confidence:  old('confidence') ? old('confidence') : null !!}"></x-inputs.ckeditor>
+
+            </div>
+            <div class="form-group m-form__group row">
+                <x-inputs.ckeditor form-class="col-lg-12" label="Community" labelfor="community" name="community" input-id="community" value="{!! $data['about'] ? $data['about']->community:  old('community') ? old('community') : null !!}"></x-inputs.ckeditor>
 
             </div>
 
+            <div class="form-group m-form__group row">
+                <x-inputs.ckeditor form-class="col-lg-12" label="Programs" labelfor="programs" name="programs" input-id="programs" value="{!! $data['about'] ? $data['about']->programs:  old('programs') ? old('programs') : null !!}"></x-inputs.ckeditor>
+
+            </div>
+
+            <div class="form-group m-form__group row">
+                <x-inputs.ckeditor form-class="col-lg-12" label="Success" labelfor="success" name="success" input-id="success" value="{!! $data['about'] ? $data['about']->success:  old('success') ? old('success') : null !!}"></x-inputs.ckeditor>
+
+            </div>
 
         <div class="form-group m-form__group row">
 
