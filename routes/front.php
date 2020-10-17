@@ -28,4 +28,6 @@ Route::get('/abroad', 'AbroadController@index')->name('abroad');
 Route::get('/abroad/{id}', 'AbroadController@show')->name('abroad.details');
 
 //Downloads
-Route::get('/download', 'DownloadController@index')->name('download');
+Route::middleware('auth:front')->group(function () {
+    Route::get('/download', 'DownloadController@index')->name('download');
+});
