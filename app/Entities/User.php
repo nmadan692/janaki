@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Entities;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -36,4 +37,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Belongs to role
+     * @return BelongsTo
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
