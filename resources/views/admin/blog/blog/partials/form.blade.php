@@ -19,7 +19,7 @@
         <div class="form-group m-form__group row">
 
             <x-inputs.ckeditor form-class="col-lg-12" label="News" labelfor="news" name="description" input-id="description" value="{!! $data['blog'] ? $data['blog']->description:  old('description') ? old('description') : null !!}"></x-inputs.ckeditor>
-            <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Image" labelfor="image" name="image" value="{{  $data['blog']->image ?? old('image') ?? null }}"></x-inputs.image>
+            <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Image(365*246)" labelfor="image" name="image" value="{{  $data['blog']->image ?? old('image') ?? null }}"></x-inputs.image>
 
         </div>
 

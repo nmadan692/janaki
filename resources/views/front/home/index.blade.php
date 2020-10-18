@@ -16,7 +16,7 @@
                             <div class="slide-content-wrapper">
                                 <div class="slide-content text-center">
                                     <h2>{{ $banner->tittle }}</h2>
-                                    <p>{{ $banner->sub_tittle }} </p>
+                                    <p>{!! $banner->sub_tittle  !!}  </p>
                                     <a class="default-btn" href="{{ route('contact.index') }}">Contact Us</a>
                                 </div>
                             </div>

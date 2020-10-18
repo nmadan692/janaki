@@ -7,9 +7,9 @@
                             'ID',
                             'About Us',
                             'Action']"
-                            :button="['route' => 'admin.about.create',
-                                      'name' => 'Create',
-                                      'icon' => 'la la-plus']"
+{{--                            :button="['route' => 'admin.about.create',--}}
+{{--                                      'name' => 'Create',--}}
+{{--                                      'icon' => 'la la-plus']"--}}
                             :url="'/admin/about/list'"
                             columns="[
                             { data: 'id', name: 'id' },

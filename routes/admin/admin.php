@@ -60,6 +60,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('download/status/change/{id}', 'Download\DownloadController@changeStatus')->name('download.status.change');
     Route::resource('download', 'Download\DownloadController');
 
+    // Password
+    Route::get('password/list', 'Password\PasswordController@list')->name('password.list');
+    Route::resource('password', 'Password\PasswordController');
 
     Route::get('/home', 'HomeController@index')->name('home');
 });

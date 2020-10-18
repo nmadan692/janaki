@@ -31,3 +31,6 @@ Route::get('/abroad/{id}', 'AbroadController@show')->name('abroad.details');
 Route::middleware('auth:front')->group(function () {
     Route::get('/download', 'DownloadController@index')->name('download');
 });
+
+
+

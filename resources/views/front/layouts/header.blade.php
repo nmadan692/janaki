@@ -10,7 +10,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="header-top-right text-right">
                         <ul>
-                            <li><a href="login.html">login</a></li>
+                            <li><a href="{{ route("download") }}">login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <div class="logo">
-                        <a href="index.html"><img src="{{ getImageUrl( $setting[0]->logo ?? null) }}"
-                                                  alt="eduhome"/></a>
+                        <a href="{{ route("home") }}"><img src="{{ getImageUrl( $setting[0]->logo ?? null) }}"
+                                                  alt="Janaki Education Hub"/></a>
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-6">

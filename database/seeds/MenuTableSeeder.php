@@ -28,21 +28,11 @@ class MenuTableSeeder extends Seeder
     public function run()
     {
         $menus = [
-            [
-                'name' => 'Dashboard',
-                'slug' => 'dashboard',
-                'order' => 1,
-                'status' => true,
-                'route' => 'admin.home',
-                'icon' => 'm-menu__link-icon flaticon-line-graph',
-                'parent_id' => null,
-                'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
-                'related_route' => null
-            ],
+
             [
                 'name' => 'Setting',
                 'slug' => 'setting',
-                'order' => 2,
+                'order' => 1,
                 'status' => true,
                 'route' => 'admin.setting.index',
                 'icon' => 'm-menu__link-icon fa fa-cog',
@@ -53,7 +43,7 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Blog Category',
                 'slug' => 'blogcategory',
-                'order' => 3,
+                'order' => 2,
                 'status' => true,
                 'route' => 'admin.blog.category.index',
                 'icon' => 'm-menu__link-icon fa fa-box',
@@ -64,7 +54,7 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Blog',
                 'slug' => 'blog',
-                'order' => 4,
+                'order' => 3,
                 'status' => true,
                 'route' => 'admin.blog.index',
                 'icon' => 'm-menu__link-icon fa fa-book-reader',
@@ -75,10 +65,10 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Course',
                 'slug' => 'course',
-                'order' => 5,
+                'order' => 4,
                 'status' => true,
                 'route' => 'admin.course.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-book',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
@@ -86,10 +76,10 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'About',
                 'slug' => 'about',
-                'order' => 6,
+                'order' => 5,
                 'status' => true,
                 'route' => 'admin.about.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-anchor',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
@@ -97,10 +87,10 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Contact',
                 'slug' => 'contact',
-                'order' => 7,
+                'order' => 6,
                 'status' => true,
                 'route' => 'admin.contact.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-comments',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
@@ -108,10 +98,10 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Teacher',
                 'slug' => 'teacher',
-                'order' => 8,
+                'order' => 7,
                 'status' => true,
                 'route' => 'admin.teacher.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-user-secret',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
@@ -119,10 +109,10 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Notice',
                 'slug' => 'notice',
-                'order' => 9,
+                'order' => 8,
                 'status' => true,
                 'route' => 'admin.notice.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-volume-up',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
@@ -130,10 +120,10 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Banner',
                 'slug' => 'banner',
-                'order' => 10,
+                'order' => 9,
                 'status' => true,
                 'route' => 'admin.banner.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-tv',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
@@ -141,10 +131,10 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'MD Message',
                 'slug' => 'md_message',
-                'order' => 11,
+                'order' => 10,
                 'status' => true,
                 'route' => 'admin.message.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-envelope',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
@@ -152,10 +142,10 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Abroad',
                 'slug' => 'abroad',
-                'order' => 12,
+                'order' => 11,
                 'status' => true,
                 'route' => 'admin.abroad.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-plane',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null
@@ -163,10 +153,21 @@ class MenuTableSeeder extends Seeder
             [
                 'name' => 'Download',
                 'slug' => 'download',
-                'order' => 13,
+                'order' => 12,
                 'status' => true,
                 'route' => 'admin.download.index',
-                'icon' => 'm-menu__link-icon fa fa-book-reader',
+                'icon' => 'm-menu__link-icon fa fa-download',
+                'parent_id' => null,
+                'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
+                'related_route' => null
+            ],
+            [
+                'name' => 'Password',
+                'slug' => 'password',
+                'order' => 13,
+                'status' => true,
+                'route' => 'admin.password.index',
+                'icon' => 'm-menu__link-icon fa fa-eye-slash',
                 'parent_id' => null,
                 'menu_group_id' => MenuGroupConstant::ADMIN_SIDEBAR_ID,
                 'related_route' => null

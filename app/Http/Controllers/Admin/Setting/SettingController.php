@@ -69,8 +69,6 @@ class SettingController extends Controller
                 'viber',
                 'email',
                 'address',
-                'delivery_start_hour',
-                'delivery_end_hour',
                 'facebook',
                 'instagram',
                 'twitter'

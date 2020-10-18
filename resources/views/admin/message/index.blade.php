@@ -7,9 +7,9 @@
                             'ID',
                             'Message From MD',
                             'Action']"
-                            :button="['route' => 'admin.message.create',
-                                      'name' => 'Create',
-                                      'icon' => 'la la-plus']"
+{{--                            :button="['route' => 'admin.message.create',--}}
+{{--                                      'name' => 'Create',--}}
+{{--                                      'icon' => 'la la-plus']"--}}
                             :url="'/admin/message/list'"
                             columns="[
                             { data: 'id', name: 'id' },

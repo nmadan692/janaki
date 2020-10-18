@@ -25,13 +25,13 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-5 col-xs-12">
                         <div class="teacher-details-img">
-                            <img src="{{ getImageUrl($message[0]->image) }}" alt="teacher">
+                            <img src="{{ getImageUrl($message[0]->image  ?? null) }}" alt="teacher">
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
                         <div class="teacher-details-content ml-50">
                             <h2 class="pb-20">Message From MD</h2>
-                            <p>{!! $message[0]->message_from_md !!}</p>
+                            <p>{!! $message[0]->message_from_md  ?? null !!}</p>
                             <ul>
                                 <li><span>Bikash Kumar Jha</span></li>
                                 <li><span></span>Managing Director</li>
@@ -89,29 +89,7 @@
         </div>
     </div>
     <!-- Teacher End -->
-    <!-- Testimonial Area Start -->
-    <div class="testimonial-area pt-110 pb-105 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="testimonial-owl owl-theme owl-carousel">
-                    <div class="col-md-8 col-md-offset-2 col-sm-12">
-                        <div class="single-testimonial">
-                            <div class="testimonial-info">
-{{--                                <div class="testimonial-img">--}}
-{{--                                    <img src="{{asset('front')}}/img/testimonial/testimonial.jpg" alt="testimonial">--}}
-{{--                                </div>--}}
-                                <div class="testimonial-content">
-                                    <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                    <h4>Madan Neupane</h4>
-                                    <h5>Student, CSE</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Testimonial Area End -->
 {{--    <!-- Notice Start -->--}}
 {{--    <section class="notice-area two pt-140 pb-100">--}}

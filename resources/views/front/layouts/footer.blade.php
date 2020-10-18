@@ -4,7 +4,7 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="single-widget pr-60">
                     <div class="footer-logo pb-25">
-                        <a href="index.html"><img src="{{ getImageUrl( $setting[0]->logo ?? null) }}" alt="janaki education hub"></a>
+                        <a href="{{ route('home') }}"><img src="{{ getImageUrl( $setting[0]->logo ?? null) }}" alt="janaki education hub"></a>
                     </div>
 <p>We are dedicated to provide best solutions to the students seeking for Language classes, Computer Classes, Tuition Classes and many more.</p>
                     <div class="footer-social">

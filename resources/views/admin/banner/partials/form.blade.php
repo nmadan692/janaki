@@ -9,11 +9,11 @@
             <div class="form-group m-form__group row">
                 <x-inputs.text form-class="col-lg-6" :errors="$errors" label="Tittle" labelfor="tittle" name="tittle" type="text" value="{{  $data['banner']->name ?? old('tittle')  ?? null }}"></x-inputs.text>
 
-                <x-inputs.ckeditor form-class="col-lg-12" label="Description" labelfor="sub_title" name="sub_title" input-id="sub_title" value="{!! $data['banner'] ? $data['banner']->sub_tittle:  old('sub_tittle') ? old('description') : null !!}"></x-inputs.ckeditor>
+                <x-inputs.ckeditor form-class="col-lg-12" label="Description" labelfor="sub_title" name="sub_tittle" input-id="sub_tittle" value="{!! ($data['banner'] ? $data['banner']->sub_tittle:  old('sub_tittle') )? old('sub_tittle') : null !!}"></x-inputs.ckeditor>
 
             </div>
         <div class="form-group m-form__group row">
-            <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Image" labelfor="image" name="image" value="{{  $data['banner']->image ?? old('image') ?? null }}"></x-inputs.image>
+            <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Image(1920*810)" labelfor="image" name="image" value="{{  $data['banner']->image ?? old('image') ?? null }}"></x-inputs.image>
         </div>
 
     </x-slot>

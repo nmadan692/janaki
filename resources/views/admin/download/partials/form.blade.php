@@ -11,16 +11,14 @@
             </div>
             <div class="form-group m-form__group row">
 
-                <x-inputs.ckeditor form-class="col-lg-12" label="Description" labelfor="description" name="description" input-id="description" value="{!! $data['download'] ? $data['download']->description:  old('description') ? old('description') : null !!}"></x-inputs.ckeditor>
+                <x-inputs.ckeditor form-class="col-lg-12" label="Description" labelfor="description" name="description" input-id="description" value="{!! ($data['download'] ? $data['download']->description:  old('description')) ? old('description') : null !!}"></x-inputs.ckeditor>
 
             </div>
             <div class="form-group m-form__group row">
                     <label for="myfile">Select a file:</label>
-                    <input type="file" id="myfile" name="file">
+                    <input type="file" id="myfile">
             </div>
-            <div class="form-group m-form__group row">
-                <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Image" labelfor="image" name="image" value="{{  $data['download']->image ?? old('image') ?? null }}"></x-inputs.image>
-            </div>
+
 
     </x-slot>
     <x-slot name="footer">

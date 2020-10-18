@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Download extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['name','image', 'description', 'file', 'status'];
+    protected $fillable = ['name', 'description', 'file', 'status'];
 
 }

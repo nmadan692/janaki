@@ -31,7 +31,7 @@
 
         <div class="form-group m-form__group row">
 
-            <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Image" labelfor="image" name="image" value="{{  $data['about']->image ?? old('image') ?? null }}"></x-inputs.image>
+            <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Image(547*408)" labelfor="image" name="image" value="{{  $data['about']->image ?? old('image') ?? null }}"></x-inputs.image>
 
         </div>
 

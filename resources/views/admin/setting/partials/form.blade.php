@@ -19,13 +19,11 @@
 
         <div class="form-group m-form__group row">
             <x-inputs.text form-class="col-lg-6" :errors="$errors" label="Address" labelfor="address" name="address" type="text" value="{{  $data['setting']->address ?? old('address') ?? null }}"></x-inputs.text>
-            <x-inputs.text form-class="col-lg-6" :errors="$errors" label="Delivery Start Hour" labelfor="delivery_start_hour" name="delivery_start_hour" type="time" value="{{  $data['setting']->delivery_start_hour ?? old('delivery_start_hour') ?? null }}"></x-inputs.text>
+            <x-inputs.text form-class="col-lg-6" :errors="$errors" label="Facebook Link" labelfor="facebook" name="facebook" type="text" value="{{  $data['setting']->facebook ?? old('facebook') ?? null }}"></x-inputs.text>
+
         </div>
 
-        <div class="form-group m-form__group row">
-            <x-inputs.text form-class="col-lg-6" :errors="$errors" label="Delivery End Hour" labelfor="delivery_end_hour" name="delivery_end_hour" type="time" value="{{  $data['setting']->delivery_end_hour ?? old('delivery_end_hour') ?? null }}"></x-inputs.text>
-            <x-inputs.text form-class="col-lg-6" :errors="$errors" label="Facebook Link" labelfor="facebook" name="facebook" type="text" value="{{  $data['setting']->facebook ?? old('facebook') ?? null }}"></x-inputs.text>
-        </div>
+
 
         <div class="form-group m-form__group row">
             <x-inputs.text form-class="col-lg-6" :errors="$errors" label="Instagram Link" labelfor="instagram" name="instagram" type="text" value="{{  $data['setting']->instagram ?? old('instagram') ?? null }}"></x-inputs.text>
@@ -33,7 +31,7 @@
         </div>
 
         <div class="form-group m-form__group row">
-            <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Logo" labelfor="logo" name="logo" type="file" value="{{  $data['setting']->logo ?? old('logo') ?? null }}"></x-inputs.image>
+            <x-inputs.image form-class="col-lg-6" :errors="$errors" label="Logo(250*52)" labelfor="logo" name="logo" type="file" value="{{  $data['setting']->logo ?? old('logo') ?? null }}"></x-inputs.image>
         </div>
 
 

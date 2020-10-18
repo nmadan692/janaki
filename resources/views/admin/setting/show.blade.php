@@ -40,18 +40,10 @@
                                 <div class="col-4">
                                     <input class="form-control m-input" type="text" value="{{ $setting->email }}" readonly>
                                 </div>
-                                <label for="example-text-input" class="col-2 col-form-label">Delivery Starts at</label>
-                                <div class="col-4">
-                                    <input class="form-control m-input" type="text" value="{{ $setting->delivery_start_hour }}" readonly>
-                                </div>
+
                             </div>
 
-                            <div class="form-group m-form__group row">
-                                <label for="example-text-input" class="col-2 col-form-label">Delivery Ends at</label>
-                                <div class="col-4">
-                                    <input class="form-control m-input" type="text" value="{{ $setting->delivery_end_hour }}" readonly>
-                                </div>
-                            </div>
+
                             <div class="form-group m-form__group row">
                                 <label for="example-text-input" class="col-2 col-form-label">Facebook</label>
                                 <div class="col-4">

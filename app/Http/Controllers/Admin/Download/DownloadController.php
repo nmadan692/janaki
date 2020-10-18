@@ -63,7 +63,6 @@ class DownloadController extends Controller
                 'id',
                 'name',
                 'description',
-                'image',
                 'file',
                 'status'
             ],
@@ -126,17 +125,18 @@ class DownloadController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('image');
-        $image_name = time() . '.' . $image->getClientOriginalExtension();
+//        $image = $request->file('image');
+//        $image_name = time() . '.' . $image->getClientOriginalExtension();
+//
+//        $storeData = array_merge(
+//            $request->all(),
+//            [
+//                'image' => Storage::putFileAs('public/download/images', $image, $image_name)
+//            ]
+//        );
+//        $this->downloadService->create($storeData);
 
-        $storeData = array_merge(
-            $request->all(),
-            [
-                'image' => Storage::putFileAs('public/download/images', $image, $image_name)
-            ]
-        );
-        $this->downloadService->create($storeData);
-
+        $this->downloadService->create($request->all());
 
         return redirect()->route('admin.download.index');
     }
@@ -174,23 +174,24 @@ class DownloadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $updateData = $request->all();
-        if($request->file('image')) {
-            $image = $request->file('image');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $updateData = array_merge(
-                $updateData,
-                [
-                    'image' => Storage::putFileAs('public/download/images', $image, $image_name)
-                ]);
-        }
-        $download = $this->downloadService->findOrFail($id);
-
-        $this->downloadService->update($id, $updateData);
-        $oldImage = $download->image;
-        if($oldImage && $request->file('image')) {
-            Storage::delete($oldImage);
-        }
+//        $updateData = $request->all();
+//        if($request->file('image')) {
+//            $image = $request->file('image');
+//            $image_name = time() . '.' . $image->getClientOriginalExtension();
+//            $updateData = array_merge(
+//                $updateData,
+//                [
+//                    'image' => Storage::putFileAs('public/download/images', $image, $image_name)
+//                ]);
+//        }
+//        $download = $this->downloadService->findOrFail($id);
+//
+//        $this->downloadService->update($id, $updateData);
+//        $oldImage = $download->image;
+//        if($oldImage && $request->file('image')) {
+//            Storage::delete($oldImage);
+//        }
+        $this->downloadService->update($id, $request->all());
 
         return redirect()->route('admin.download.index');
     }

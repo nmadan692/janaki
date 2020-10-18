@@ -29,8 +29,7 @@ class SettingRequest extends FormRequest
             'logo' => 'required|image|mimes:jpg,png,jpeg,gif,svg',
             'address' => 'required',
             'email' => ['required', Rule::unique('settings')->ignore($this->setting)],
-            'delivery_start_hour' => 'required',
-            'delivery_end_hour' => 'required',
+
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'viber' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
         ];

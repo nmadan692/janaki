@@ -43,8 +43,8 @@
                             </div>
                             <div class="contact-add">
                                 <h3>address</h3>
-                                <p>Tikathali</p>
-                                <p>Lalitpur, Nepal</p>
+                                <p>{{ $setting[0]->address  ?? null }}</p>
+
                             </div>
                         </div>
                         <div class="single-contact mb-65">
@@ -53,8 +53,8 @@
                             </div>
                             <div class="contact-add">
                                 <h3>Phone</h3>
-                                <p> 9851146341</p>
-                                <p>9823352737</p>
+                                <p> {{ $setting[0]->phone  ?? null }}</p>
+                                <p>{{ $setting[0]->viber  ?? null }}</p>
                             </div>
                         </div>
                         <div class="single-contact">
@@ -63,7 +63,7 @@
                             </div>
                             <div class="contact-add">
                                 <h3>email</h3>
-                                <p>janakieducationhub@gmail.com</p>
+                                <p>{{ $setting[0]->email  ?? null }}</p>
                             </div>
                         </div>
                     </div>
