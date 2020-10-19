@@ -10,8 +10,16 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="header-top-right text-right">
                         <ul>
-                            <li><a href="{{ route("download") }}">login</a></li>
+                            @if(authenticated('front'))
+                                <li><a href="#">loged in</a></li>
+                            @else
+                                <li><a href="{{ route("download") }}">login</a></li>
+                                @endif
+
+
+
                         </ul>
+
                     </div>
                 </div>
             </div>
@@ -40,10 +48,9 @@
                                     <li><a href="{{ route('abroad') }}">Abroad Study</a>
 
                                     @if(authenticated('front'))
-                                        <li><a href="{{ route('download') }}">Downloads</a>
+                                        <li><a href="{{ route('download') }}">Downloads</a></li>
                                             @endif
 
-                                        </li>
 
                                         <li><a href="{{ route('blog') }}">blog</a>
 

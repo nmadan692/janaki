@@ -10,7 +10,8 @@ use App\Services\General\Course\CourseService;
 use App\Services\General\Notice\NoticeService;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class
+HomeController extends Controller
 {
     /**
      * @var AboutService
